@@ -37,7 +37,6 @@ services:
         build:
             args:
                 user: ${USER_NAME}
-                uid: ${USER_UID}
             context: ./dockerfiles/php
             dockerfile: Dockerfile
         volumes:
@@ -64,8 +63,8 @@ services:
         working_dir: /srv
         build:
             args:
-                user: ${USER_NAME}
-                uid: ${USER_UID}
+                name: ${GIT_USER_NAME}
+                email: ${GIT_USER_EMAIL}
             context: ./dockerfiles/node
             dockerfile: Dockerfile
         volumes:

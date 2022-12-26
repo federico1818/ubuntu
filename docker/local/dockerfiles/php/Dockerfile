@@ -2,7 +2,6 @@ FROM php:8.2-fpm
 
 # Arguments defined in docker-compose.yml
 ARG user
-ARG uid
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -29,7 +28,7 @@ RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd mysqli zip
 COPY --from=composer:2.2.1 /usr/bin/composer /usr/bin/composer
 
 # Create system user to run Composer and Artisan Commands
-RUN useradd -G www-data,root -u $uid -d /home/$user $user
+RUN useradd -G www-data,root -u 1000 -d /home/$user $user
 RUN mkdir -p /home/$user/.composer && \
     chown -R $user:$user /home/$user
 
