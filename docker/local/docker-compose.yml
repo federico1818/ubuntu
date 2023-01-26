@@ -75,6 +75,17 @@ services:
         ports: 
             - 4200:4200
 
+    mailhog:
+        image: mailhog/mailhog
+        container_name: local-mail
+        restart: always
+        networks:
+            - default
+        ports: 
+            - 1025:1025
+            - 8025:8025
+
+
 networks:
     default:
         driver: bridge
