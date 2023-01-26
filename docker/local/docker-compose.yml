@@ -76,7 +76,7 @@ services:
             - 4200:4200
 
     mailhog:
-        image: mailhog/mailhog
+        image: mailhog/mailhog:v1.0.1
         container_name: local-mail
         restart: always
         networks:
