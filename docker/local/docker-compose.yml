@@ -37,7 +37,7 @@ services:
         build:
             args:
                 user: ${USER_NAME}
-            context: ./dockerfiles/php
+            context: ./dockerfiles/php-74
             dockerfile: Dockerfile
         volumes:
             - ${VOLUME_WORKSPACE}:/var/www
