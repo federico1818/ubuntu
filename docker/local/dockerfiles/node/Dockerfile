@@ -2,9 +2,10 @@ FROM node:18.13.0
 
 ARG name
 ARG email
+ARG ngversion
 
 # Install Angular
-RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli@$ngversion
 
 # Set user
 USER node
