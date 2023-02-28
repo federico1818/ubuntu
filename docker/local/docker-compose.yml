@@ -16,7 +16,7 @@ services:
             - default
 
     nginx:
-        image: nginx:1.20-alpine
+        image: nginx:1.22-alpine
         container_name: local-nginx
         restart: always
         ports:
@@ -37,7 +37,7 @@ services:
         build:
             args:
                 user: ${USER_NAME}
-            context: ./dockerfiles/php-74
+            context: ${DOCKERFILE_FOLDER_PHP}
             dockerfile: Dockerfile
         volumes:
             - ${VOLUME_WORKSPACE}:/var/www
