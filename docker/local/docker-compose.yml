@@ -66,7 +66,7 @@ services:
                 name: ${GIT_USER_NAME}
                 email: ${GIT_USER_EMAIL}
                 ngversion: ${ANGULAR_VERSION}
-            context: ./dockerfiles/node
+            context: ${DOCKERFILE_FOLDER_NODE}
             dockerfile: Dockerfile
         volumes:
             - ${VOLUME_WORKSPACE}:/srv
