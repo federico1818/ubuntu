@@ -10,6 +10,9 @@ RUN npm install -g pnpm
 # Install Angular
 RUN npm install -g @angular/cli@$ngversion
 
+# Install Firebase
+RUN npm install -g firebase-tools
+
 # Set user
 USER node
 
