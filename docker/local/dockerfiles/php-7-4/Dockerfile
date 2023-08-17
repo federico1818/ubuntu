@@ -22,7 +22,7 @@ RUN pecl install -o -f redis \
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd mysqli zip
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd mysqli zip xml fileinfo
 
 # Get latest Composer
 COPY --from=composer:2.2.1 /usr/bin/composer /usr/bin/composer
