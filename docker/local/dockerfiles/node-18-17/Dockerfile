@@ -4,9 +4,6 @@ ARG name
 ARG email
 ARG ngversion
 
-# Install pnpm
-RUN npm install -g pnpm
-
 # Install Angular
 RUN npm install -g @angular/cli@$ngversion
 
