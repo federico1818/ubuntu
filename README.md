@@ -1,17 +1,35 @@
-# Environment Docker to local development
+# Instalar GIT
 
-## Config
-Edit ```.env``` file
+[Link](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
 ```sh
-cp .env.example .env
+sudo apt-get install git-all
 ```
 
-## Up
+Verificar instalación
+
 ```sh
-docker-compose up -d
+git --version
 ```
 
-## Down
+# Configurar GITHUB
+
+Generar SSH Key
+
 ```sh
-docker-compose down
+ssh-keygen -t ed25519 -C "federico1818@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
 ```
+
+Ir a [Settings / Keys](https://github.com/settings/keys) y copiar el contenido:
+
+```sh
+cat .ssh/id_ed25519.pub
+```
+
+# Configurar VSCode
+
+Copiar en la carpeta ```~/.config/Code/User/``` los archivos:
+* ```keybindings.json``` 
+* ```settings.json```
