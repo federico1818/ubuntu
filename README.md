@@ -18,7 +18,13 @@ Generar SSH Key
 
 ```sh
 ssh-keygen -t ed25519 -C "federico1818@gmail.com"
+```
+
+```sh
 eval "$(ssh-agent -s)"
+```
+
+```sh
 ssh-add ~/.ssh/id_ed25519
 ```
 
