@@ -39,3 +39,29 @@ cat .ssh/id_ed25519.pub
 Copiar en la carpeta ```~/.config/Code/User/``` los archivos:
 * ```keybindings.json``` 
 * ```settings.json```
+
+# Instalar Docker
+
+Verificar pasos en el siguiente [Link](https://docs.docker.com/engine/install/ubuntu/)
+
+Ejecutar docker como usuario no root
+
+```sh
+sudo groupadd docker
+```
+
+```sh
+sudo usermod -aG docker $USER
+```
+
+```sh
+newgrp docker
+```
+
+```sh
+docker run hello-world
+```
+
+# Instalar Docker Compose
+
+[Link](https://docs.docker.com/compose/install/standalone/)
