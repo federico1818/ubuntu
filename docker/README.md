@@ -9,17 +9,26 @@ unset PROJECT_NAME && export PROJECT_NAME="my-project"
 ## Crear carpeta
 
 ```sh
-mkdir ~/workspace/laravel/$PROJECT_NAME
+mkdir ~/workspace/projects/$PROJECT_NAME
 ```
 
 ## Copiar carpeta de docker
 
 ```sh
-cp -R ./docker/laravel/ ~/workspace/laravel/$PROJECT_NAME/docker
+cp -R ./docker/laravel/ ~/workspace/projects/$PROJECT_NAME/$PROJECT_NAME-docker
 ```
 
 ## Levantar entorno
 
 ```sh
-cd ~/workspace/laravel/$PROJECT_NAME/docker && docker-compose up -d
+cd ~/workspace/projects/$PROJECT_NAME/$PROJECT_NAME-docker && docker-compose up -d
+```
+
+## Crear proyecto
+
+```sh
+docker run --rm --interactive --tty \
+    --volume ~/workspace/projects/$PROJECT_NAME:/app \
+    --user $(id -u):$(id -g) \
+    composer create-project laravel/laravel=11.1.4 $PROJECT_NAME-laravel
 ```
