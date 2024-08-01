@@ -1,30 +1,36 @@
 # Laravel
 
-## Nombrar proyecto
+## Crear un proyecto desde cero
+
+1. Nombrar proyecto
 
 ```sh
 unset PROJECT_NAME && export PROJECT_NAME="my-project"
 ```
 
-## Crear carpeta
+2. Crear carpeta
 
 ```sh
 mkdir ~/workspace/projects/$PROJECT_NAME
 ```
 
-## Copiar carpeta de docker
+3. Copiar carpeta de docker
 
 ```sh
 cp -R ./docker/laravel/ ~/workspace/projects/$PROJECT_NAME/$PROJECT_NAME-docker
 ```
 
-## Levantar entorno
+4. Editar el archivo ```.env```
+
+5. Editar el archivo ```sites/enabled/site.conf```
+
+6. Levantar entorno
 
 ```sh
 cd ~/workspace/projects/$PROJECT_NAME/$PROJECT_NAME-docker && docker-compose up -d
 ```
 
-## Crear proyecto
+7. Crear proyecto
 
 ```sh
 docker run --rm --interactive --tty \
